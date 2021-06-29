@@ -58,7 +58,7 @@ else
             <?php
                 // create links
                 foreach($plans as $k => $i)
-                    echo "<li><a href=?class=$k class='plan-a'>$k</a><br></li>";
+                    echo "<li><a href=?class='$k' class='plan-a'>$k</a><br></li>";
             ?>
             </ul>
         </div>
@@ -147,7 +147,7 @@ else
                             echo '<span class="group">' .
                                 '<span class="subject">' . $subject . '</span><br>' .
                                 '<span class="teacher">' . $teacher . '</span> '.
-                                '<span class="classroom">[' . $classroom . ']<span>'.
+                                '<span class="classroom">[' . $classroom . ']</span>'.
                                 '</span><br>';
                         } 
                     }
@@ -188,7 +188,7 @@ else
                 <script src="js/cookies-notice.js"></script>
                 <div id="notice-content">
                     <p>Ta strona używa plików <a href="https://pl.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a>.</p>
-                    <button onclick="CookiesNotice.accept()">Akceptuję</button><button onclick="CookiesNotice.decline()">Później</button></p>
+                    <button onclick="CookiesNotice.accept()">Akceptuję</button><button onclick="CookiesNotice.decline()">Później</button>
                 </div>
             </div>';
     ?>
