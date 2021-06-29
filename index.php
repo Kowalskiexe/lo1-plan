@@ -32,7 +32,7 @@ else
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <mate charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wspaniały plan</title>
     <link rel="stylesheet" href="styles/main.css">
