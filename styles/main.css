@@ -1,0 +1,128 @@
+:root {
+    --background: white;
+    --content-height: 1600px;
+    --max-height: 60px;
+    --min-height: 30px;
+    --header-height: 60px; /* resized by header.js */
+    --border: 1px solid black;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Bitter', serif;
+    font-size: 16px;
+    background-color: var(--background);
+}
+
+#header {
+    height: var(--header-height);
+    width: 100%;
+    padding: 20px;
+    border-bottom: var(--border);
+    box-shadow: 0px 2px 2px gray;
+    background-color: var(--background);
+    position: fixed;
+    top: 0px;
+}
+
+#logo-img {
+    width: var(--header-height);
+    height: var(--header-height);
+    float: left;
+}
+
+#main-h1 {
+    margin-top: calc(var(--header-height) * 0.2);
+    margin-bottom: 30px;
+    margin-left: calc(var(--header-height) + 20px);
+    height: 40px;
+    font-size: calc(var(--header-height) * 0.5);
+    color: black;
+}
+
+h2 {
+    margin-top: 0px;
+}
+
+a {
+    color: rgb(17, 0, 80);
+}
+
+.plan-a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+.plan-a:hover {
+    text-decoration: underline;
+}
+
+.panel {
+    padding: 20px;
+}
+
+#menu {
+    width: 150px;
+    float: left;
+    background-color: #dedbd2;
+    height: var(--content-height);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 60px;
+}
+#menu > div {
+    position: fixed;
+    top: 120px;
+}
+
+#schedule {
+    margin-top: 60px;
+    padding-left: 190px;
+    padding-right: 190px;
+    padding-top: 60px;
+    background-color: #b0c4b1;
+    height: var(--content-height);
+}
+
+#footer {
+    height: 120px;
+    padding: 20px;
+    border-top: var(--border);
+}
+
+#footer > p {
+    margin-top: 0px;
+}
+
+#cookies-notice {
+    background-color: rgb(243, 212, 171);
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    border-top: var(--border);
+    box-shadow: 0px -2px 2px gray;
+}
+#notice-content > p {
+    float: left;
+    margin: 5px 0px 0px 0px;
+}
+#notice-content > button {
+    margin-left: 20px;
+    border-radius: 4px;
+    border: 2px solid rgb(241, 200, 146);
+    background-color: #f0ece7;
+    font-family: 'Bitter', serif;
+    padding: 5px;
+}
+#notice-content > button:hover {
+    background-color: white;
+    cursor: pointer;
+}
+#notice-content {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}

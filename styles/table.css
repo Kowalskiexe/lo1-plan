@@ -1,0 +1,39 @@
+table {
+    background-color: black;
+    padding: 0px;
+}
+
+td, th {
+    padding: 5px;
+    margin: 0px;
+    background-color: #FFFFFF;
+}
+
+.header {
+    width: 300px;
+}
+
+#first-header {
+    width: 50px;
+}
+
+#second-header {
+    width: 160px;
+}
+
+.break-td {
+    background-color: #ccc;
+}
+
+.subject {
+    font-weight: bold;
+}
+
+.none-td {
+    background-color: #ccc;
+    text-align: center;
+}
+
+.first-col-td, .second-col-td {
+    text-align: center;
+}
