@@ -10,7 +10,6 @@ if (isset($_REQUEST['class']))
     $class = $_REQUEST['class'];
     if (get_cookie('cookie_accept') !== false)
     {
-        remove_cookie('class');
         set_cookie('class', $class);
     }
 }
