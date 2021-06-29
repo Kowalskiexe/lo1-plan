@@ -173,7 +173,7 @@ else
     </div>
     <div id="footer">
         <p>Strona szkoły I LO im. Stanisława Staszica <a href="https://lo1.lublin.eu/">www.lo1.lublin.eu<a>. Plan pobrano autommatycznie z <a href="https://lo1.lublin.eu/plan/">www.lo1.lublin.eu/plan</a>.</p>
-        <p>Cały kod strony można znaleźć na: <a href="https://github.com/Kowalskiexe/plan-lekcji" target="_blank">www.github.com/kowalskiexe/plan-lekcji</a>.</p>
+        <p>Cały kod strony można znaleźć na: <a href="https://github.com/Kowalskiexe/lo1-plan" target="_blank">www.github.com/kowalskiexe/lo1-plan</a>.</p>
         <p>
             by Maciej Kowalski<br>
             <a href="mailto:kowalski.exe@gmail.com">kowalski.exe@gmail.com<a><br>
