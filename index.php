@@ -6,6 +6,7 @@ $plans = get_plans();
 
 if (isset($_REQUEST['class']))
 {
+    echo '<!-- request -->';
     $class = $_REQUEST['class'];
     if (get_cookie('cookie_accept') !== false)
     {
@@ -18,6 +19,7 @@ else
     $class = '1A'; // default class
     if (get_cookie('cookie_accept') !== false)
     {
+        echo '<!-- cookies accepted -->';
         $cookie_class = get_cookie('class');
         if ($cookie_class !== false)
             $class = $cookie_class;
@@ -168,7 +170,7 @@ else
         echo '</table>';
 
         $when = $school_site->find('td[align=left]', 0);
-        echo $when->plaintext;
+        echo '<p>' . $when->plaintext . '</p>';
     ?>
     </div>
     <div id="footer">
