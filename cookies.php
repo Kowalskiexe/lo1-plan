@@ -1,5 +1,5 @@
 <?php
-const COOKIE_LIFESPAN = 30 * 24 * 60 * 60 * 1000; // a month, default cookie lifespan
+const COOKIE_LIFESPAN = (86400 * 30); // a month, default cookie lifespan
 
 function set_cookie($name, $value)
 {
