@@ -47,7 +47,7 @@ else
     <div id="header">
         <script src="js/style_var.js"></script>
         <script src="js/header.js"></script>
-        <a href="https://lo1.lublin.eu/staszic/" title="strona szkoły"><img id="logo-img" src="img/staszic-650px.png"></a>
+        <a href="https://lo1.lublin.eu/staszic/" title="strona szkoły"><img id="logo-img" src="img/staszic-650px.png" alt="logo szkoły"></a>
         <h1 id="main-h1">Ulepszony plan | <?php echo "klasa: $class<br>"; ?></h1>
     </div>
 
@@ -172,7 +172,7 @@ else
     ?>
     </div>
     <div id="footer">
-        <p>Strona szkoły I LO im. Stanisława Staszica <a href="https://lo1.lublin.eu/">www.lo1.lublin.eu<a>. Plan pobrano autommatycznie z <a href="https://lo1.lublin.eu/plan/">www.lo1.lublin.eu/plan</a>.</p>
+        <p>Strona szkoły I LO im. Stanisława Staszica <a href="https://lo1.lublin.eu/">www.lo1.lublin.eu</a>. Plan pobrano autommatycznie z <a href="https://lo1.lublin.eu/plan/">www.lo1.lublin.eu/plan</a>.</p>
         <p>Cały kod strony można znaleźć na: <a href="https://github.com/Kowalskiexe/lo1-plan" target="_blank">www.github.com/kowalskiexe/lo1-plan</a>.</p>
         <p>
             by Maciej Kowalski<br>
