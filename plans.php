@@ -8,3 +8,4 @@ function get_plans(): array
             $plans[$link->plaintext] = SCHOOL_URL . $link->href;
     return $plans;
 }
+?>

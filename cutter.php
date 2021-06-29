@@ -1,5 +1,4 @@
 <?php
-const DEBUG = false;
 function remove_last(&$arr)
 {
     unset($arr[count($arr) - 1]);
@@ -55,20 +54,6 @@ function table_to_array($table): array
                 $rows[$i][$j] = substr($rows[$i][$j], 0, $start) . 'S:' . substr($rows[$i][$j], $end);
             }
         }
-    }
-    if (DEBUG)
-    {
-        // print
-        for ($i = 0; $i < count($rows); $i++)
-        {
-            echo "i $i: ";
-            foreach ($rows[$i] as $el)
-            {
-                echo "[$el] ";
-            }
-            echo "<br>";
-        }
-        echo "cutting end<br>";
     }
 
     return $rows;

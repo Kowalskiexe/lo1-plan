@@ -58,7 +58,7 @@ else
             <?php
                 // create links
                 foreach($plans as $k => $i)
-                    echo "<li><a href=?class='$k' class='plan-a'>$k</a><br></li>";
+                    echo "<li><a href='?class=$k' class='plan-a'>$k</a><br></li>";
             ?>
             </ul>
         </div>
