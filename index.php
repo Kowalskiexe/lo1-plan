@@ -176,18 +176,22 @@ else
         <p>Cały kod strony można znaleźć na: <a href="https://github.com/Kowalskiexe/lo1-plan" target="_blank">www.github.com/kowalskiexe/lo1-plan</a>.</p>
         <p>
             by Maciej Kowalski<br>
-            <a href="mailto:kowalski.exe@gmail.com">kowalski.exe@gmail.com<a><br>
+            <a href="mailto:kowalski.exe@gmail.com">kowalski.exe@gmail.com</a><br>
         </p>
     </div>
 
-    <div id="cookies-notice">
-        <script src="js/cookies.js"></script>
-        <script src="js/cookies-notice.js"></script>
-        <div id="notice-content">
-            <p>Ta strona używa plików <a href="https://pl.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a>.</p>
-            <button onclick="CookiesNotice.accept()">Akceptuję</button><button onclick="CookiesNotice.decline()">Później</button></p>
-        </div>
-    </div>
+    <?php
+    if (get_cookie('cookie_accept') === false)
+        echo 
+            '<div id="cookies-notice">
+                <script src="js/cookies.js"></script>
+                <script src="js/cookies-notice.js"></script>
+                <div id="notice-content">
+                    <p>Ta strona używa plików <a href="https://pl.wikipedia.org/wiki/HTTP_cookie" target="_blank">cookies</a>.</p>
+                    <button onclick="CookiesNotice.accept()">Akceptuję</button><button onclick="CookiesNotice.decline()">Później</button></p>
+                </div>
+            </div>';
+    ?>
 
 </body>
 </html>
