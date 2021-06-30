@@ -1,5 +1,5 @@
 <?php
-setcookie("myCookie", 'test');
+setcookie("myCookie2", 'test2', time() + (86400 * 30), '/');
 
 
 require('simple_html_dom.php');
