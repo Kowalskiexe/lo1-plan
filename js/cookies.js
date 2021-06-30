@@ -11,7 +11,7 @@ const Cookies = (() => {
             return false;
         },
         setCookie: (name, value, lifespan = Cookies.COOKIE_LIFESPAN) => {
-            document.cookie = `${name}=${value}; expires=${Date.now() + lifespan}; path=/`;
+            document.cookie = `${name}=${value}; expires=${new Date(Date.now() + lifespan).toUTCString()}; path=/`;
         }
     }
 })();
