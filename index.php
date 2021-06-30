@@ -15,7 +15,7 @@ if (isset($_GET['class']))
     if (get_cookie('cookie_accept') !== false)
     {
         echo '<!-- cookies accepted -->';
-        set_cookie('class', "$class");
+        set_cookie('class_c', "$class");
     }
 }
 else
@@ -23,7 +23,7 @@ else
     $class = '1A'; // default class
     if (get_cookie('cookie_accept') !== false)
     {
-        $cookie_class = get_cookie('class');
+        $cookie_class = get_cookie('class_c');
         echo '<!-- cookies accepted; [' . $cookie_class . '] -->';
         if ($cookie_class !== false)
             $class = $cookie_class;
