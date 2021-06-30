@@ -1,4 +1,7 @@
 <?php
+setcookie("myCookie", 'test');
+
+
 require('simple_html_dom.php');
 include('cookies.php');
 require('plans.php');
