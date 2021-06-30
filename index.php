@@ -4,6 +4,7 @@
 
 require('simple_html_dom.php');
 include('cookies.php');
+set_cookie("test3", 'test3');
 require('plans.php');
 $plans = get_plans();
 
