@@ -15,7 +15,7 @@ if (isset($_REQUEST['class']))
     if (get_cookie('cookie_accept') !== false)
     {
         echo '<!-- cookies accepted -->';
-        set_cookie('class', $class);
+        set_cookie('class', "$class");
     }
 }
 else
