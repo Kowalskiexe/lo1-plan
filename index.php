@@ -12,9 +12,10 @@ if (isset($_GET['class']))
     echo "<!-- get [$class] -->";
     if (get_cookie('cookie_accept') !== false)
     {
-        echo '<!-- cookies accepted -->';
+        echo '<!-- cookies accepted (a) -->';
         set_cookie('class_c', "$class");
         set_cookie("test3", 'test3');
+        echo '<!-- cookies set -->';
     }
 }
 else
@@ -23,7 +24,7 @@ else
     if (get_cookie('cookie_accept') !== false)
     {
         $cookie_class = get_cookie('class_c');
-        echo '<!-- cookies accepted; [' . $cookie_class . '] -->';
+        echo '<!-- cookies accepted (b) [' . $cookie_class . '] -->';
         if ($cookie_class !== false)
             $class = $cookie_class;
     }
