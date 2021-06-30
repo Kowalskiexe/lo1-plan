@@ -8,10 +8,10 @@ set_cookie("test3", 'test3');
 require('plans.php');
 $plans = get_plans();
 
-if (isset($_REQUEST['class']))
+if (isset($_GET['class']))
 {
-    $class = $_REQUEST['class'];
-    echo "<!-- request [$class] -->";
+    $class = $_GET['class'];
+    echo "<!-- get [$class] -->";
     if (get_cookie('cookie_accept') !== false)
     {
         echo '<!-- cookies accepted -->';
