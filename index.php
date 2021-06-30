@@ -1,10 +1,8 @@
 <?php
 //setcookie("myCookie2", 'test2', time() + (86400 * 30), '/');
 
-
 require('simple_html_dom.php');
 include('cookies.php');
-set_cookie("test3", 'test3');
 require('plans.php');
 $plans = get_plans();
 
@@ -16,6 +14,7 @@ if (isset($_GET['class']))
     {
         echo '<!-- cookies accepted -->';
         set_cookie('class_c', "$class");
+        set_cookie("test3", 'test3');
     }
 }
 else
