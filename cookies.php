@@ -1,7 +1,7 @@
 <?php
 function set_cookie($name, $value)
 {
-    echo "<!-- set cookie $name $value -->";
+    //echo "<!-- set cookie $name $value -->";
     setcookie($name, $value, time() + (86400 * 30), '/');
 }
 

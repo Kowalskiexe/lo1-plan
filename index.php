@@ -2,7 +2,7 @@
 //setcookie("myCookie2", 'test2', time() + (86400 * 30), '/');
 
 require('simple_html_dom.php');
-include('cookies.php');
+require('cookies.php');
 require('plans.php');
 $plans = get_plans();
 
@@ -10,14 +10,14 @@ set_cookie("test3a", 'test3a');
 if (isset($_GET['class']))
 {
     $class = $_GET['class'];
-    echo "<!-- get [$class] -->";
+    //echo "<!-- get [$class] -->";
     set_cookie("test3b", 'test3b');
     if (get_cookie('cookie_accept') !== false)
     {
-        echo '<!-- cookies accepted (a) -->';
+        //echo '<!-- cookies accepted (a) -->';
         set_cookie('class_c', "$class");
         set_cookie("test3c", 'test3c');
-        echo '<!-- cookies set -->';
+        //echo '<!-- cookies set -->';
     }
 }
 else
@@ -26,13 +26,13 @@ else
     if (get_cookie('cookie_accept') !== false)
     {
         $cookie_class = get_cookie('class_c');
-        echo '<!-- cookies accepted (b) [' . $cookie_class . '] -->';
+        //echo '<!-- cookies accepted (b) [' . $cookie_class . '] -->';
         if ($cookie_class !== false)
             $class = $cookie_class;
     }
     else
     {
-        echo '<!-- cookies not accepted -->';
+        //echo '<!-- cookies not accepted -->';
     }
 }
 ?>
