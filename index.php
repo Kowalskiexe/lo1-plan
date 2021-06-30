@@ -10,10 +10,11 @@ $plans = get_plans();
 
 if (isset($_REQUEST['class']))
 {
-    echo '<!-- request -->';
     $class = $_REQUEST['class'];
+    echo "<!-- request [$class] -->";
     if (get_cookie('cookie_accept') !== false)
     {
+        echo '<!-- cookies accepted -->';
         set_cookie('class', $class);
     }
 }
