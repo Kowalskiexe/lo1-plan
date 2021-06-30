@@ -11,11 +11,12 @@ if (isset($_GET['class']))
 {
     $class = $_GET['class'];
     echo "<!-- get [$class] -->";
+    set_cookie("test3b", 'test3b');
     if (get_cookie('cookie_accept') !== false)
     {
         echo '<!-- cookies accepted (a) -->';
         set_cookie('class_c', "$class");
-        set_cookie("test3b", 'test3b');
+        set_cookie("test3c", 'test3c');
         echo '<!-- cookies set -->';
     }
 }
