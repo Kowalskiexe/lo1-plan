@@ -1,9 +1,7 @@
 <?php
-const COOKIE_LIFESPAN = (86400 * 30); // a month, default cookie lifespan
-
 function set_cookie($name, $value)
 {
-    setcookie($name, $value, time() + COOKIE_LIFESPAN, '/');
+    setcookie($name, $value, time() + (86400 * 30), '/');
 }
 
 function remove_cookie($name)
