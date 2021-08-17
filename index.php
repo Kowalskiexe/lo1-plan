@@ -132,7 +132,7 @@ else
                             $subject = str_replace('El_mech.', 'elementy mechaniki', $subject);
                             $subject = str_replace('El.', 'elementy ekonomii', $subject);
                             $subject = str_replace('informat.', 'informatyka', $subject);
-                            $subject = str_replace('wos', 'wiedza o społeczństwie', $subject);
+                            $subject = str_replace('wos', 'wiedza o społeczeństwie', $subject);
                             $subject = str_replace('e_dla_bezp', 'edu. dla bezpie.', $subject);
                             $subject = str_replace('przedsięb.', 'pod. przedsiębiorczości', $subject);
                             $subject = str_replace('zaj.', 'godzina wychowawcza', $subject);
