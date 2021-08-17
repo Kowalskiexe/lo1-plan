@@ -127,7 +127,7 @@ else
                             $subject = str_replace('r_', 'roz. ', $subject);
                             $subject = str_replace('u_', 'u. ', $subject);
                             $subject = str_replace('j.', 'j. ', $subject);
-                            $subject = str_replace('hist.i', 'historia i społeńczesto', $subject);
+                            $subject = str_replace('hist.i', 'historia i społeczeństo', $subject);
                             $subject = str_replace('Edu.eko.', 'edukacja ekologiczna', $subject);
                             $subject = str_replace('El_mech.', 'elementy mechaniki', $subject);
                             $subject = str_replace('El.', 'elementy ekonomii', $subject);
