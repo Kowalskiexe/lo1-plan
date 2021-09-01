@@ -6,17 +6,13 @@ require('cookies.php');
 require('plans.php');
 $plans = get_plans();
 
-if (isset($_GET['class']))
-{
+if (isset($_GET['class'])) {
     $class = $_GET['class'];
     if (get_cookie('cookie_accept') !== false)
         set_cookie('class_c', "$class");
-}
-else
-{
+} else {
     $class = '1A'; // default class
-    if (get_cookie('cookie_accept') !== false)
-    {
+    if (get_cookie('cookie_accept') !== false) {
         $cookie_class = get_cookie('class_c');
         if ($cookie_class !== false)
             $class = $cookie_class;
@@ -26,7 +22,26 @@ else
 
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MN2VK3P');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wspaniały plan</title>
@@ -38,7 +53,11 @@ else
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN2VK3P" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="header">
         <script src="js/style_var.js"></script>
         <script src="js/header.js"></script>
@@ -50,36 +69,34 @@ else
         <div id="menu-slider">
             <h2 id="classes-h2">Klasy :</h2>
             <ul>
-            <?php
+                <?php
                 // create links
-                foreach($plans as $k => $i)
+                foreach ($plans as $k => $i)
                     echo "<li><a href='?class=$k' class='plan-a'>$k</a><br></li>";
-            ?>
+                ?>
             </ul>
         </div>
     </div>
 
     <div id="schedule" class="panel">
         <h2>Plan :</h2>
-    <?php
+        <?php
         $school_site = file_get_html($plans[$class]);
         $original_table = $school_site->find('table[class=tabela]', 0);
-   
+
         require('cutter.php');
         $rows = table_to_array($original_table);
         // calculate break times
         $breaks = array();
-        for ($i = 2; $i < count($rows); $i++)
-        {
+        for ($i = 2; $i < count($rows); $i++) {
             $break_begin = substr($rows[$i - 1][1], 6, 5);
             $break_end = substr($rows[$i][1], 0, 5);
             $break_dur = (strtotime($break_end) - strtotime($break_begin)) / 60; // duration of break in minutes
             $breaks[] = $break_dur;
         }
-        
+
         // add breaks
-        for ($i = 0, $j = 0; $j < count($breaks); $i++, $j++)
-        {
+        for ($i = 0, $j = 0; $j < count($breaks); $i++, $j++) {
             array_splice($rows, $i + 2, 0, array(array($breaks[$j])));
             $i++;
         }
@@ -96,33 +113,28 @@ else
         echo '</tr>';
 
         const BREAK_SIZE = 3; // px per minute
-        for ($i = 1; $i < count($rows); $i++)
-        {
+        for ($i = 1; $i < count($rows); $i++) {
             echo '<tr>';
-            if ($i % 2 == 1)
-            {
+            if ($i % 2 == 1) {
                 // LESSON
 
                 echo '<td class="first-col-td">' . $rows[$i][0] . '</td>'; // first column
                 $rows[$i][1] = str_replace('-', ' - ', $rows[$i][1]); // add spaces
                 echo '<td class="second-col-td">' . $rows[$i][1] . '</td>'; // second column
 
-                for ($j = 2; $j < count($rows[$i]); $j++)
-                {
-                    if ($rows[$i][$j] != 'none')
-                    {
+                for ($j = 2; $j < count($rows[$i]); $j++) {
+                    if ($rows[$i][$j] != 'none') {
                         echo '<td class="lesson-td" style="height: 80px;">';
                         $rows[$i][$j] = explode(';', $rows[$i][$j]); // divide groups
-                        foreach ($rows[$i][$j] as $lesson)
-                        {
+                        foreach ($rows[$i][$j] as $lesson) {
                             $lesson = trim($lesson);
                             $lesson = explode(' ', $lesson);
-                            
+
                             // cut prefixes
                             $subject = substr($lesson[0], 2); // first element
-                            $teacher = substr($lesson[count($lesson)-2], 2); // second to last element
-                            $classroom = substr($lesson[count($lesson)-1], 2); // last element
-                            
+                            $teacher = substr($lesson[count($lesson) - 2], 2); // second to last element
+                            $classroom = substr($lesson[count($lesson) - 1], 2); // last element
+
                             // expanding names
                             $subject = str_replace('r_', 'roz. ', $subject);
                             $subject = str_replace('u_', 'u. ', $subject);
@@ -138,25 +150,21 @@ else
                             $subject = str_replace('zaj.', 'godzina wychowawcza', $subject);
                             $subject = str_replace('doradz.', 'doradztwo zawodowe', $subject);
                             $subject = str_replace('ekon.w', 'ekonomia', $subject);
-                            
+
                             echo '<span class="group">' .
                                 '<span class="subject">' . $subject . '</span><br>' .
-                                '<span class="teacher">' . $teacher . '</span> '.
-                                '<span class="classroom">[' . $classroom . ']</span>'.
+                                '<span class="teacher">' . $teacher . '</span> ' .
+                                '<span class="classroom">[' . $classroom . ']</span>' .
                                 '</span><br>';
-                        } 
-                    }
-                    else
-                    {
+                        }
+                    } else {
                         echo '<td class="none-td"><span class="none"> - </span>';
                     }
                     echo '</td>';
                 }
-            }
-            else
-            {
+            } else {
                 // BREAK
-                echo '<td class="break-td" colspan="7" style="height: ' . BREAK_SIZE * $rows[$i][0]. 'px">' . $rows[$i][0]  . ' min</td>';
+                echo '<td class="break-td" colspan="7" style="height: ' . BREAK_SIZE * $rows[$i][0] . 'px">' . $rows[$i][0]  . ' min</td>';
             }
             echo '</tr>';
         }
@@ -164,7 +172,7 @@ else
 
         $when = $school_site->find('td[align=left]', 0);
         echo '<p>' . $when->plaintext . '</p>';
-    ?>
+        ?>
     </div>
     <div id="footer">
         <p>Strona szkoły I LO im. Stanisława Staszica <a href="https://lo1.lublin.eu/">www.lo1.lublin.eu</a>. Plan pobrano autommatycznie z <a href="https://lo1.lublin.eu/plan/">www.lo1.lublin.eu/plan</a>.</p>
@@ -177,8 +185,8 @@ else
 
     <?php
     if (get_cookie('cookie_accept') === false)
-        echo 
-            '<div id="cookies-notice">
+        echo
+        '<div id="cookies-notice">
                 <script src="js/cookies.js"></script>
                 <script src="js/cookies-notice.js"></script>
                 <div id="notice-content">
@@ -189,4 +197,5 @@ else
     ?>
 
 </body>
+
 </html>
